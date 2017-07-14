@@ -145,8 +145,8 @@ if __name__ == '__main__':
     check_point = False
 
     symG, symD = make_dcgan_sym(ngf, ndf, nc)
-    #mx.viz.plot_network(symG, shape={'rand': (batch_size, 100, 1, 1)}).view()
-    #mx.viz.plot_network(symD, shape={'data': (batch_size, nc, 64, 64)}).view()
+    mx.viz.plot_network(symG, title='G', shape={'rand': (batch_size, 100, 1, 1)}).view()
+    mx.viz.plot_network(symD, title='D', shape={'data': (batch_size, nc, 64, 64)}).view()
 
     # ==============data==============
     if dataset == 'mnist':
