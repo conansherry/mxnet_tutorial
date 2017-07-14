@@ -70,11 +70,3 @@ for i_key,key_i in enumerate(all_keys):
 # Finish
 net.save(args.cf_model)
 print("\n- Finished.\n")
-
-
-
-
-
-
-
-

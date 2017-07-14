@@ -229,7 +229,4 @@ def write_node(txt_file, info):
         Deconvolution(txt_file, info)
     else:
         pass
-
-
-
-
+    

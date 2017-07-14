@@ -36,4 +36,3 @@ with open(args.cf_prototxt, "w") as prototxt_file:
           info['share'] = True
       
     write_node(prototxt_file, info)
-
