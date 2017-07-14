@@ -20,14 +20,14 @@ BatchEndParam = namedtuple('BatchEndParams', ['epoch', 'nbatch', 'eval_metric'])
 if __name__ == "__main__":
     ctx = mx.gpu(1)
     network = get_symbol()
-    model_prefix = 'model/facealignment'
-    save_model_prefix = "model/facealignment"
+    model_prefix = 'facealignment'
+    save_model_prefix = "facealignment"
     # _, network_args, network_auxs = mx.model.load_checkpoint(model_prefix, 1)
     network_args = {}
     network_auxs = {}
     network_args, network_auxs = init_params(ctx, network, network_args, network_auxs, (1, 3, 128, 128))
 
-    dataiter = FileIter(r'E:\clean_data')
+    dataiter = FileIter(r'E:\mxnet_tutorial_data')
 
     # prepare grad_params
     arg_shapes, out_shapes, aux_shapes = network.infer_shape(data=dataiter.provide_data[0][1])

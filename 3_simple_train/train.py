@@ -47,3 +47,5 @@ if __name__ == "__main__":
             mod_network.update_metric(eval_metric, batch.label)
 
             print('epoch:', epoch, 'iter:', t, 'metric:', eval_metric.get())
+
+        mod_network.save_params('model_%04d.params' % epoch)
