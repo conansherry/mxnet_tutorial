@@ -228,7 +228,6 @@ if __name__ == '__main__':
             label[:] = 0
             modD.forward(mx.io.DataBatch(outG, [label]), is_train=True)
             modD.backward()
-            #modD.update()
             gradD = [[grad.copyto(grad.context) for grad in grads] for grads in modD._exec_group.grad_arrays]
 
             modD.update_metric(mD, [label])
@@ -256,7 +255,6 @@ if __name__ == '__main__':
             modG.update()
 
             mG.update([label], modD.get_outputs())
-
 
             if mon is not None:
                 mon.toc_print()
